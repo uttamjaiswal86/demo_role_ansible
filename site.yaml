@@ -1,0 +1,8 @@
+---
+  - name: To run roles -day 3 session
+    hosts: web 
+    
+    roles:
+      - uks
+      - KhalidOuatik.ansible_role_nodejs
+...

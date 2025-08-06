@@ -1,0 +1,5 @@
+port: 85
+myname: "UKS"
+age: "381"
+packagename: "apache2"
+servicename: "apache2"

@@ -1,0 +1,23 @@
+---
+  - name: run apt update
+    ansible.builtin.apt:
+      update_cache: yes
+  - name: Install Apache in Ubuntu
+    ansible.builtin.apt:
+      name: apache2
+      state: latest
+  - name: Copy Index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: starting a Apache server
+    ansible.builtin.service:
+      name: apache2
+      state: started
+  - name: Template for httpd.conf
+    ansible.builtin.template:
+      src: ports.conf.j2
+      dest: /etc/apache2/ports.conf
+    notify:
+      - ReStarting a Apache Server
+...
