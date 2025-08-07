@@ -1,6 +1,6 @@
 ---
   - name: To run roles -day 3 session
-    hosts: web 
+    hosts: all 
     
     roles:
       - uks
