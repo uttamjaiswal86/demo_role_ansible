@@ -1,0 +1,6 @@
+https://www.bestdevops.com/ansible-session-notes-august-2025/
+https://github.com/orgs/devopsschool-training-notes/repositories
+
+https://www.devopsschool.com/blog/ansible-installation-and-configuration-guide/
+https://galaxy.ansible.com/ui/
+https://www.devopsschool.com/blog/ansible-tower-workflow-tutorials/

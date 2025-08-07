@@ -1,0 +1,23 @@
+---
+- name: Update web servers
+  hosts: localhost
+  vars:
+    myname: "Rajesh Kumar"
+    packagename: "apache2"
+
+  tasks:
+  - name: Install Apache in ubuntu
+    ansible.builtin.apt:
+      name: "{{ packagename }}"
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: apache2
+      state: started
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      var: myname

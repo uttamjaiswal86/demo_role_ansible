@@ -1,23 +1,24 @@
 ---
-  - name: run apt update
-    ansible.builtin.apt:
-      update_cache: yes
-  - name: Install Apache in Ubuntu
-    ansible.builtin.apt:
-      name: apache2
-      state: latest
-  - name: Copy Index.html
-    ansible.builtin.copy:
-      src: index.html
-      dest: /var/www/html/index.html
-  - name: starting a Apache server
-    ansible.builtin.service:
-      name: apache2
-      state: started
-  - name: Template for httpd.conf
-    ansible.builtin.template:
-      src: ports.conf.j2
-      dest: /etc/apache2/ports.conf
-    notify:
-      - ReStarting a Apache Server
+  - name: touch without state
+    touch:
+      file: ./me.txt
+    register: touch_out
+  - debug:
+      var: touch_out
+  - name: touchw with state (after create)
+    touch:
+      file: ./me.txt
+      state: present
+  #- name: touch with absent
+  #  touch:
+  #    file: ./me.txt
+  #    state: absent
+  #- name: touch absent with no file
+  #  touch:
+  #    file: ./me.txt
+  #    state: absent
+  - name: userdemo module from python based module
+    userdemo:
+      name: Uttam Jaiswal
+      age: 39
 ...

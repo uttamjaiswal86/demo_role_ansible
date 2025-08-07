@@ -1,0 +1,32 @@
+---
+- name: Update web servers
+  hosts: localhost
+  vars:
+    myname: "Rajesh Kumar"
+    port: 81
+
+  tasks:
+  - name: Install Apache in Ubuntu
+    ansible.builtin.apt:
+      name: apache2
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Template for httpd.conf
+    template:
+      src: ports.conf.j2
+      dest: /etc/apache2/ports.conf
+    notify:
+      - ReStarting a Apache Server
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: apache2
+      state: started
+
+  handlers:
+  - name: ReStarting a Apache Server
+    ansible.builtin.service:
+      name: apache2
+      state: restarted
