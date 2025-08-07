@@ -4,5 +4,5 @@
     
     roles:
       - uks
-      - KhalidOuatik.ansible_role_nodejs
+        #- KhalidOuatik.ansible_role_nodejs
 ...
