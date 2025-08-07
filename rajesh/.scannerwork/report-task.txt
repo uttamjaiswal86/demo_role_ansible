@@ -1,6 +1,0 @@
-projectKey=devopsschool
-serverUrl=http://43.205.211.51:9000
-serverVersion=25.7.0.110598
-dashboardUrl=http://43.205.211.51:9000/dashboard?id=devopsschool
-ceTaskId=3172baf4-1161-4ad8-9366-9fd974d69df4
-ceTaskUrl=http://43.205.211.51:9000/api/ce/task?id=3172baf4-1161-4ad8-9366-9fd974d69df4
